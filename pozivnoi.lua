@@ -1,7 +1,7 @@
 --Update: Обновил позывные/состав
 -- Информация о скрипте
 script_name('«Auto-Doklad»') 		                    -- Указываем имя скрипта
-script_version(3.26) 						            -- Указываем версию скрипта / FINAL
+script_version(3.28) 						            -- Указываем версию скрипта / FINAL
 script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- Указываем имя автора
 
 -- Библиотеки
@@ -21,7 +21,7 @@ local nicks = { -- [''] = '',
   ['Vlad_Werber'] = '', -- Майор.
 
 -- Ком. состав.
-  ['Alex_Frank'] = 'Немец', --Куратор.
+  ['Alex_Frank''] = 'Немец', --Куратор.
   ['Sergey_Fibo'] = 'Панда', -- Командир.
    -- Зам. Командира.
   ['Suetlan Zelimxanov'] = 'Суета', -- Зам. Командира.
@@ -43,7 +43,7 @@ local nicks = { -- [''] = '',
   ['Azim_Kenes'] = 'Фантом',
   ['Till_Cunningham'] = 'Мур',
   ['Chris_Ludvig'] = 'Янки',
-  ['Lukas_Walker'] = 'Гуляющий',
+  ['Lukas_Walker'] = 'Ыаы',	
   ['Jason_Storm'] = 'Шторм',
   
 -- Стажеры.
@@ -135,7 +135,7 @@ end
 -- Авто-обновление
 function updateScript()
 	local filepath = os.getenv('TEMP') .. '\\online-update.json'
-	downloadUrlToFile('https://raw.githubusercontent.com/DianO4ka/123/main/online-update.json', filepath, function(id, status, p1, p2)
+	downloadUrlToFile('https://raw.githubusercontent.com/DianO4ka228/123/main/online-update.json', filepath, function(id, status, p1, p2)
 		if status == dlstatus.STATUS_ENDDOWNLOADDATA then
 			local file = io.open(filepath, 'r')
 			if file then
