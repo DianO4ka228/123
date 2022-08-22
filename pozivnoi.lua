@@ -1,7 +1,7 @@
 --Update: Обновил позывные/состав
 -- Информация о скрипте
 script_name('«Auto-Doklad»') 		                    -- Указываем имя скрипта
-script_version(3.25) 						            -- Указываем версию скрипта / FINAL
+script_version(3.26) 						            -- Указываем версию скрипта / FINAL
 script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- Указываем имя автора
 
 -- Библиотеки
@@ -18,30 +18,28 @@ local nicks = { -- [''] = '',
   ['Emma_Cooper'] = 'Мать', -- Полковник.
   ['Wurn_Linkol'] = 'Даркхолм', -- Полковник.
   ['Cross_Dacota'] = 'Драко', -- Подполковник.
-  ['Kirill_Magomedov'] = 'Мага', -- Майор.
+  ['Vlad_Werber'] = '', -- Майор.
 
 -- Ком. состав.
-  ['Satoshi_Sapporo'] = 'Сато', --Куратор.
-  ['Nika_Black'] = 'Багира', -- Командир.
+  ['Alex_Frank'] = 'Немец', --Куратор.
+  ['Sergey_Fibo'] = 'Панда', -- Командир.
    -- Зам. Командира.
-  ['Sergey_Fibo'] = 'Панда', -- Зам. Командира.
+  ['Azim_Kenes'] = 'Фантом', -- Зам. Командира.
   ['Sky_Sillence'] = 'Таеро', -- Инструктор.
   ['Kwenyt_Hokage'] = 'Скорпион', -- Инструктор.
   ['Blayzex_Stoun'] = 'Джамбо', -- Инструктор.
   
 -- Бойцы.
   ['Foxit_Makayonok'] = 'Лис',
-  ['Alex_Frank'] = 'Немец',
   ['Hawii_Tearz'] = 'Шаха',
   ['Aiden_Florestino'] = 'Призрак',
   ['Anthony_Diez'] = 'Медведь',
   ['Ashton_Beasley'] = 'Ашот',
   ['Dini_Raksize'] = 'Дино',
-  ['Comtonia_Oceguera'] = 'Компот',
+  ['Suetlan_Zelimxanov'] = 'Суета',
   ['Makar_Ryabov'] = 'Чех',
-  ['Sibewest_Silence'] = 'Сало',
   ['Suleyman_Zelimxanov'] = 'Скандал',
-  ['Azim_Kenes'] = 'Фантом',
+  ['Aleks_Bichovski'] = 'Шатай',
   ['Kirill_Shatunov'] = 'Север',
   ['Chris_Ludvig'] = 'Янки',
   ['Jason_Storm'] = 'Шторм',
@@ -50,12 +48,12 @@ local nicks = { -- [''] = '',
   ['Calvin_Espinozzi'] = 'Ноззи',
   ['Henry_Markano'] = 'Ханк',
   ['Sofiya_Murphy'] = 'Смурф',
-  ['Tenebrise_Moon'] = 'Луна',
+  ['Till_Cunningham'] = 'Мур',
   ['Candy_Dope'] = 'Экстази',
   ['Gabriel_Olimpov'] = 'Блу',
   ['Near_Alpinstar'] = 'Персик',
   ['Shane_Prix'] = 'Орлик',
-  ['Mikola_Korenivskyi'] = 'Гост',
+  ['Sibewest_Silence'] = 'Сало',
   ['Salazar_Black'] = 'Фенрир',
   ['Jo_Bax'] = 'Бакс'
 }
