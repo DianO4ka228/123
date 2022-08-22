@@ -1,7 +1,7 @@
 --Update: Обновил позывные/состав
 -- Информация о скрипте
 script_name('«Auto-Doklad»') 		                    -- Указываем имя скрипта
-script_version(3.27) 						            -- Указываем версию скрипта / FINAL
+script_version(3.28) 						            -- Указываем версию скрипта / FINAL
 script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- Указываем имя автора
 
 -- Библиотеки
@@ -21,10 +21,10 @@ local nicks = { -- [''] = '',
   ['Vlad_Werber'] = '', -- Майор.
 
 -- Ком. состав.
-  ['Alex_Frank'] = 'Немец', --Kurator.
+  ['Alex_Frank''] = 'Немец', --Куратор.
   ['Sergey_Fibo'] = 'Панда', -- Командир.
    -- Зам. Командира.
-  ['Azim_Kenes'] = 'Фантом', -- Зам. Командира.
+  ['Suetlan Zelimxanov'] = 'Суета', -- Зам. Командира.
   ['Sky_Sillence'] = 'Таеро', -- Инструктор.
   ['Kwenyt_Hokage'] = 'Скорпион', -- Инструктор.
   ['Blayzex_Stoun'] = 'Джамбо', -- Инструктор.
@@ -36,11 +36,12 @@ local nicks = { -- [''] = '',
   ['Anthony_Diez'] = 'Медведь',
   ['Ashton_Beasley'] = 'Ашот',
   ['Dini_Raksize'] = 'Дино',
-  ['Suetlan_Zelimxanov'] = 'Суета',
+  ['Comtonia_Oceguera'] = 'Компот',
   ['Makar_Ryabov'] = 'Чех',
+  ['Sibewest_Silence'] = 'Сало',
   ['Suleyman_Zelimxanov'] = 'Скандал',
-  ['Aleks_Bichovski'] = 'Шатай',
-  ['Kirill_Shatunov'] = 'Север',
+  ['Azim_Kenes'] = 'Фантом',
+  ['Till_Cunningham'] = 'Мур',
   ['Chris_Ludvig'] = 'Янки',
   ['Jason_Storm'] = 'Шторм',
   
@@ -48,12 +49,11 @@ local nicks = { -- [''] = '',
   ['Calvin_Espinozzi'] = 'Ноззи',
   ['Henry_Markano'] = 'Ханк',
   ['Sofiya_Murphy'] = 'Смурф',
-  ['Till_Cunningham'] = 'Мур',
   ['Candy_Dope'] = 'Экстази',
   ['Gabriel_Olimpov'] = 'Блу',
   ['Near_Alpinstar'] = 'Персик',
   ['Shane_Prix'] = 'Орлик',
-  ['Sibewest_Silence'] = 'Сало',
+  ['Aleks_Bichovski'] = 'Шатай',
   ['Salazar_Black'] = 'Фенрир',
   ['Jo_Bax'] = 'Бакс'
 }
@@ -134,7 +134,7 @@ end
 -- Авто-обновление
 function updateScript()
 	local filepath = os.getenv('TEMP') .. '\\online-update.json'
-	downloadUrlToFile('https://raw.githubusercontent.com/DianO4ka228/123/main/online-update.json', filepath, function(id, status, p1, p2)
+	downloadUrlToFile('https://raw.githubusercontent.com/DianO4ka/123/main/online-update.json', filepath, function(id, status, p1, p2)
 		if status == dlstatus.STATUS_ENDDOWNLOADDATA then
 			local file = io.open(filepath, 'r')
 			if file then
