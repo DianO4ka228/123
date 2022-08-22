@@ -1,7 +1,7 @@
 --Update: Обновил позывные/состав
 -- Информация о скрипте
 script_name('«Auto-Doklad»') 		                    -- Указываем имя скрипта
-script_version(3.26 ) 						            -- Указываем версию скрипта / FINAL
+script_version(3.26) 						            -- Указываем версию скрипта / FINAL
 script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- Указываем имя автора
 
 -- Библиотеки
@@ -65,7 +65,7 @@ function main()
   -- Проверяем загружен ли SA-MP
 	while not isSampAvailable() do wait(100) end
   -- Сообщаем об загрузке скрипта
-  stext('Ты загрузил скрипт!')
+  stext('Скрипт успешно загружен!')
   
   -- Регистрируем команду
   sampRegisterChatCommand('dok', cmd_dok)
@@ -116,7 +116,7 @@ function cmd_dok(args)
       return
     end
   else
-    atext('{808080}Ошибка | {FFFFFF}Ты не в транспорте.')
+    atext('{808080}Ошибка | {FFFFFF}Вы не сидите в транспорте.')
     return
   end
 end
