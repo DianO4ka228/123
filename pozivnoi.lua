@@ -1,59 +1,59 @@
---Update: Обновил позывные/состав
--- Информация о скрипте
-script_name('«Auto-Doklad»') 		                    -- Указываем имя скрипта
-script_version(2.91) 						            -- Указываем версию скрипта / FINAL
-script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- Указываем имя автора
+--Update: ГЋГЎГ­Г®ГўГЁГ« ГЇГ®Г§Г»ГўГ­Г»ГҐ/Г±Г®Г±ГІГ Гў
+-- Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї Г® Г±ГЄГ°ГЁГЇГІГҐ
+script_name('В«Auto-DokladВ»') 		                    -- Г“ГЄГ Г§Г»ГўГ ГҐГ¬ ГЁГ¬Гї Г±ГЄГ°ГЁГЇГІГ 
+script_version(3.22) 						            -- Г“ГЄГ Г§Г»ГўГ ГҐГ¬ ГўГҐГ°Г±ГЁГѕ Г±ГЄГ°ГЁГЇГІГ  / FINAL
+script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- Г“ГЄГ Г§Г»ГўГ ГҐГ¬ ГЁГ¬Гї Г ГўГІГ®Г°Г 
 
--- Библиотеки
+-- ГЃГЁГЎГ«ГЁГ®ГІГҐГЄГЁ
 require 'lib.moonloader'
 require 'lib.sampfuncs'
 local dlstatus = require('moonloader').download_status
 
 
--- Позывные
+-- ГЏГ®Г§Г»ГўГ­Г»ГҐ
 local nicks = { -- [''] = '',
 -- 12+
-  ['Yupi_Mean'] = 'Юпик', -- Полковник.
-  ['Andrew_Evonzer'] = 'Глиномес', -- Полковник.
-  ['Grace_Osborn'] = 'Вдова', -- Полковник.
-  ['Emma_Cooper'] = 'Мать', -- Подполковник.
-  ['Wurn_Linkol'] = 'Даркхолм', -- Подполковник.
-  ['Kirill_Magomedov'] = 'Мага', -- Майор.
+  ['Yupi_Mean'] = 'ГћГЇГЁГЄ', -- ГЏГ®Г«ГЄГ®ГўГ­ГЁГЄ.
+  ['Andrew_Evonzer'] = 'ГѓГ«ГЁГ­Г®Г¬ГҐГ±', -- ГЏГ®Г«ГЄГ®ГўГ­ГЁГЄ.
+  ['Grace_Osborn'] = 'Г‚Г¤Г®ГўГ ', -- ГЏГ®Г«ГЄГ®ГўГ­ГЁГЄ.
+  ['Emma_Cooper'] = 'ГЊГ ГІГј', -- ГЏГ®Г¤ГЇГ®Г«ГЄГ®ГўГ­ГЁГЄ.
+  ['Wurn_Linkol'] = 'Г„Г Г°ГЄГµГ®Г«Г¬', -- ГЏГ®Г¤ГЇГ®Г«ГЄГ®ГўГ­ГЁГЄ.
+  ['Kirill_Magomedov'] = 'ГЊГ ГЈГ ', -- ГЊГ Г©Г®Г°.
 
--- Ком. состав.
-   --Куратор.
-  ['Foxit_Makayonok'] = 'Лис', -- Командир.
-  ['Satoshi_Sapporo'] = 'Сато', -- Зам. Командира.
-  ['Alex_Frank'] = 'Немец', -- Зам. Командира.
-  ['Martin_Twix'] = 'Рассвет', -- Инструктор.
-  ['Charles_Spaze'] = 'Чарли', -- Инструктор.
-  ['Maurice_Spaze'] = 'Маруся', -- Инструктор.
-  ['Nika_Black'] = 'Багира', -- Инструктор.
+-- ГЉГ®Г¬. Г±Г®Г±ГІГ Гў.
+   --ГЉГіГ°Г ГІГ®Г°.
+  ['Foxit_Makayonok'] = 'Г‹ГЁГ±', -- ГЉГ®Г¬Г Г­Г¤ГЁГ°.
+  ['Satoshi_Sapporo'] = 'Г‘Г ГІГ®', -- Г‡Г Г¬. ГЉГ®Г¬Г Г­Г¤ГЁГ°Г .
+  ['Alex_Frank'] = 'ГЌГҐГ¬ГҐГ¶', -- Г‡Г Г¬. ГЉГ®Г¬Г Г­Г¤ГЁГ°Г .
+  ['Martin_Twix'] = 'ГђГ Г±Г±ГўГҐГІ', -- Г€Г­Г±ГІГ°ГіГЄГІГ®Г°.
+  ['Charles_Spaze'] = 'Г—Г Г°Г«ГЁ', -- Г€Г­Г±ГІГ°ГіГЄГІГ®Г°.
+  ['Maurice_Spaze'] = 'ГЊГ Г°ГіГ±Гї', -- Г€Г­Г±ГІГ°ГіГЄГІГ®Г°.
+  ['Nika_Black'] = 'ГЃГ ГЈГЁГ°Г ', -- Г€Г­Г±ГІГ°ГіГЄГІГ®Г°.
   
--- Бойцы.
-  ['Cherry_Maybach'] = 'Вишня',
-  ['Sofa_Meow'] = 'Киса',
-  ['Max_Meow'] = 'Кот',
-  ['Ayanxkoji_Omalley'] = 'Моль',
-  ['Ashley_Spaze'] = 'Серый',
-  ['Shannon_Spaze'] = 'Рамос',
-  ['Cameron_Wayne'] = 'Зеро',
-  ['Lautaro_Spaze'] = 'Капрал', 
-  ['Chloe_Spaze'] = 'Солнце',
-  ['Carlos_Yeti'] = 'Тиктак',
-  ['Jeremy_Spaze'] = 'Фрост',
-  ['Alex_Beasley'] = 'Бисля',
-  ['Amanda_Ray'] = 'Тортик',
-  ['Jacob_Washington'] = 'Кофе',
-  ['Sky_Sillence'] = 'Таеро',
-  ['Hawii_Tearz'] = 'Шаха',
+-- ГЃГ®Г©Г¶Г».
+  ['Cherry_Maybach'] = 'Г‚ГЁГёГ­Гї',
+  ['Sofa_Meow'] = 'ГЉГЁГ±Г ',
+  ['Max_Meow'] = 'ГЉГ®ГІ',
+  ['Ayanxkoji_Omalley'] = 'ГЊГ®Г«Гј',
+  ['Ashley_Spaze'] = 'Г‘ГҐГ°Г»Г©',
+  ['Shannon_Spaze'] = 'ГђГ Г¬Г®Г±',
+  ['Cameron_Wayne'] = 'Г‡ГҐГ°Г®',
+  ['Lautaro_Spaze'] = 'ГЉГ ГЇГ°Г Г«', 
+  ['Chloe_Spaze'] = 'Г‘Г®Г«Г­Г¶ГҐ',
+  ['Carlos_Yeti'] = 'Г’ГЁГЄГІГ ГЄ',
+  ['Jeremy_Spaze'] = 'Г”Г°Г®Г±ГІ',
+  ['Alex_Beasley'] = 'ГЃГЁГ±Г«Гї',
+  ['Amanda_Ray'] = 'Г’Г®Г°ГІГЁГЄ',
+  ['Jacob_Washington'] = 'ГЉГ®ГґГҐ',
+  ['Sky_Sillence'] = 'Г’Г ГҐГ°Г®',
+  ['Hawii_Tearz'] = 'ГГ ГµГ ',
   
--- Стажеры.
-  ['Siegmund_Berg'] = 'Зодд',
-  ['Aiden_Florestino'] = 'Призрак',
-  ['Anthony_Diez'] = 'Медведь',
-  ['Sergey_Fibo'] = 'Панда',
-  ['Kwenyt_Hokage'] = 'Скорпион',
+-- Г‘ГІГ Г¦ГҐГ°Г».
+  ['Siegmund_Berg'] = 'Г‡Г®Г¤Г¤',
+  ['Aiden_Florestino'] = 'ГЏГ°ГЁГ§Г°Г ГЄ',
+  ['Anthony_Diez'] = 'ГЊГҐГ¤ГўГҐГ¤Гј',
+  ['Sergey_Fibo'] = 'ГЏГ Г­Г¤Г ',
+  ['Kwenyt_Hokage'] = 'Г‘ГЄГ®Г°ГЇГЁГ®Г­',
   -- [''] = '',
   -- [''] = '',
   -- [''] = '',
@@ -61,27 +61,27 @@ local nicks = { -- [''] = '',
   -- [''] = '',
   
   
--- Резерв
-  ['Andy_Fawkess'] = 'Енот',
-  ['Ayanxkoji_Omalley'] = 'Моль'
+-- ГђГҐГ§ГҐГ°Гў
+  ['Andy_Fawkess'] = 'Г…Г­Г®ГІ',
+  ['Ayanxkoji_Omalley'] = 'ГЊГ®Г«Гј'
 }
 
 function main()
   
-  -- Проверяем загружен ли sampfuncs и SAMP если не загружены - возвращаемся к началу
+  -- ГЏГ°Г®ГўГҐГ°ГїГҐГ¬ Г§Г ГЈГ°ГіГ¦ГҐГ­ Г«ГЁ sampfuncs ГЁ SAMP ГҐГ±Г«ГЁ Г­ГҐ Г§Г ГЈГ°ГіГ¦ГҐГ­Г» - ГўГ®Г§ГўГ°Г Г№Г ГҐГ¬Г±Гї ГЄ Г­Г Г·Г Г«Гі
 	if not isSampfuncsLoaded() or not isSampLoaded() then return end
-  -- Проверяем загружен ли SA-MP
+  -- ГЏГ°Г®ГўГҐГ°ГїГҐГ¬ Г§Г ГЈГ°ГіГ¦ГҐГ­ Г«ГЁ SA-MP
 	while not isSampAvailable() do wait(100) end
-  -- Сообщаем об загрузке скрипта
-  stext('Скрипт успешно загружен!')
+  -- Г‘Г®Г®ГЎГ№Г ГҐГ¬ Г®ГЎ Г§Г ГЈГ°ГіГ§ГЄГҐ Г±ГЄГ°ГЁГЇГІГ 
+  stext('Г‘ГЄГ°ГЁГЇГІ ГіГ±ГЇГҐГёГ­Г® Г§Г ГЈГ°ГіГ¦ГҐГ­!')
   
-  -- Регистрируем команду
+  -- ГђГҐГЈГЁГ±ГІГ°ГЁГ°ГіГҐГ¬ ГЄГ®Г¬Г Г­Г¤Гі
   sampRegisterChatCommand('dok', cmd_dok)
-  -- Проверяем зашёл ли игрок на сервер
+  -- ГЏГ°Г®ГўГҐГ°ГїГҐГ¬ Г§Г ГёВёГ« Г«ГЁ ГЁГЈГ°Г®ГЄ Г­Г  Г±ГҐГ°ГўГҐГ°
 	while not sampIsLocalPlayerSpawned() do wait(0) end
-	-- Проверка на автозагрузку.
+	-- ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  Г ГўГІГ®Г§Г ГЈГ°ГіГ§ГЄГі.
   updateScript()
-  -- Бесконечный цикл для постоянной работы скрипта
+  -- ГЃГҐГ±ГЄГ®Г­ГҐГ·Г­Г»Г© Г¶ГЁГЄГ« Г¤Г«Гї ГЇГ®Г±ГІГ®ГїГ­Г­Г®Г© Г°Г ГЎГ®ГІГ» Г±ГЄГ°ГЁГЇГІГ 
   while true do
     wait(0)
   end
@@ -120,26 +120,26 @@ function cmd_dok(args)
         sampProcessChatInput(string.format('/r 10-%s, solo.', args))
       end
     else
-      atext('{808080}Информация | {FFFFFF}Введите: /dok тен-код.')
+      atext('{808080}Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї | {FFFFFF}Г‚ГўГҐГ¤ГЁГІГҐ: /dok ГІГҐГ­-ГЄГ®Г¤.')
       return
     end
   else
-    atext('{808080}Ошибка | {FFFFFF}Вы не сидите в транспорте.')
+    atext('{808080}ГЋГёГЁГЎГЄГ  | {FFFFFF}Г‚Г» Г­ГҐ Г±ГЁГ¤ГЁГІГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ.')
     return
   end
 end
 
--- «Auto-Report» text
+-- В«Auto-ReportВ» text
 function stext(text)
   sampAddChatMessage((' %s {FFFFFF}%s'):format(script.this.name, text), 0xABAFDE)
 end
 
--- » text
+-- В» text
 function atext(text)
-	sampAddChatMessage((' » {FFFFFF}%s'):format(text), 0xABAFDE)
+	sampAddChatMessage((' В» {FFFFFF}%s'):format(text), 0xABAFDE)
 end
 
--- Авто-обновление
+-- ГЂГўГІГ®-Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ
 function updateScript()
 	local filepath = os.getenv('TEMP') .. '\\online-update.json'
 	downloadUrlToFile('https://raw.githubusercontent.com/Enotiwe/erp-script/main/online-update.json', filepath, function(id, status, p1, p2)
@@ -151,17 +151,17 @@ function updateScript()
 				if info and info.latest then
 					if tonumber(thisScript().version) < tonumber(info.latest) then
 						lua_thread.create(function()
-							print('Началось скачивание обновления. Скрипт перезагрузится через пару секунд.')
+							print('ГЌГ Г·Г Г«Г®Г±Гј Г±ГЄГ Г·ГЁГўГ Г­ГЁГҐ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї. Г‘ГЄГ°ГЁГЇГІ ГЇГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЁГІГ±Гї Г·ГҐГ°ГҐГ§ ГЇГ Г°Гі Г±ГҐГЄГіГ­Г¤.')
 							wait(300)
 							downloadUrlToFile(updatelink, thisScript().path, function(id3, status1, p13, p23)
-								if status1 == dlstatus.STATUS_ENDDOWNLOADDATA then print('Обновление успешно скачано и установлено.')
-								elseif status1 == 64 then print('Обновление успешно скачано и установлено.')
+								if status1 == dlstatus.STATUS_ENDDOWNLOADDATA then print('ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ ГіГ±ГЇГҐГёГ­Г® Г±ГЄГ Г·Г Г­Г® ГЁ ГіГ±ГІГ Г­Г®ГўГ«ГҐГ­Г®.')
+								elseif status1 == 64 then print('ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ ГіГ±ГЇГҐГёГ­Г® Г±ГЄГ Г·Г Г­Г® ГЁ ГіГ±ГІГ Г­Г®ГўГ«ГҐГ­Г®.')
 								end
 							end)
 						end)
-					else print('Обновлений скрипта не обнаружено.') end
+					else print('ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГ© Г±ГЄГ°ГЁГЇГІГ  Г­ГҐ Г®ГЎГ­Г Г°ГіГ¦ГҐГ­Г®.') end
 				end
-			else print('Проверка обновления прошла неуспешно. Запускаю старую версию.') end
-		elseif status == 64 then print('Проверка обновления прошла неуспешно. Запускаю старую версию.') end
+			else print('ГЏГ°Г®ГўГҐГ°ГЄГ  Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї ГЇГ°Г®ГёГ«Г  Г­ГҐГіГ±ГЇГҐГёГ­Г®. Г‡Г ГЇГіГ±ГЄГ Гѕ Г±ГІГ Г°ГіГѕ ГўГҐГ°Г±ГЁГѕ.') end
+		elseif status == 64 then print('ГЏГ°Г®ГўГҐГ°ГЄГ  Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї ГЇГ°Г®ГёГ«Г  Г­ГҐГіГ±ГЇГҐГёГ­Г®. Г‡Г ГЇГіГ±ГЄГ Гѕ Г±ГІГ Г°ГіГѕ ГўГҐГ°Г±ГЁГѕ.') end
 	end)
 end
