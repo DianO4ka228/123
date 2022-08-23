@@ -1,79 +1,79 @@
-я╗┐--Update: ╨Ю╨▒╨╜╨╛╨▓╨╕╨╗ ╨┐╨╛╨╖╤Л╨▓╨╜╤Л╨╡/╤Б╨╛╤Б╤В╨░╨▓
--- ╨Ш╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П ╨╛ ╤Б╨║╤А╨╕╨┐╤В╨╡
-script_name('┬лAuto-Doklad┬╗') 		                    -- ╨г╨║╨░╨╖╤Л╨▓╨░╨╡╨╝ ╨╕╨╝╤П ╤Б╨║╤А╨╕╨┐╤В╨░
-script_version(3.22) 						            -- ╨г╨║╨░╨╖╤Л╨▓╨░╨╡╨╝ ╨▓╨╡╤А╤Б╨╕╤О ╤Б╨║╤А╨╕╨┐╤В╨░ / FINAL
-script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- ╨г╨║╨░╨╖╤Л╨▓╨░╨╡╨╝ ╨╕╨╝╤П ╨░╨▓╤В╨╛╤А╨░
+--Update: Обновил позывные/состав
+-- Информация о скрипте
+script_name('?Auto-Doklad?') 		                    -- Указываем имя скрипта
+script_version(3.22) 						            -- Указываем версию скрипта / FINAL
+script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- Указываем имя автора
 
--- ╨С╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕
+-- Библиотеки
 require 'lib.moonloader'
 require 'lib.sampfuncs'
 local dlstatus = require('moonloader').download_status
 
 
--- ╨Я╨╛╨╖╤Л╨▓╨╜╤Л╨╡
+-- Позывные
 local nicks = { -- [''] = '',
 -- 12+
-  ['Yupi_Mean'] = '╨о╨┐╨╕╨║', -- ╨У╨╡╨╜╨╡╤А╨░╨╗.
-  ['Grace_Osborn'] = '╨Т╨┤╨╛╨▓╨░', -- ╨Я╨╛╨╗╨║╨╛╨▓╨╜╨╕╨║.
-  ['Emma_Cooper'] = '╨Ь╨░╤В╤М', -- ╨Я╨╛╨╗╨║╨╛╨▓╨╜╨╕╨║.
-  ['Wurn_Linkol'] = '╨Ф╨░╤А╨║╤Е╨╛╨╗╨╝', -- ╨Я╨╛╨╗╨║╨╛╨▓╨╜╨╕╨║.
-  ['Cross_Dacota'] = '╨Ф╤А╨░╨║╨╛', -- ╨Я╨╛╨┤╨┐╨╛╨╗╨║╨╛╨▓╨╜╨╕╨║.
-  ['Vlad_Werber'] = '', -- ╨Ь╨░╨╣╨╛╤А.
+  ['Yupi_Mean'] = 'Юпик', -- Генерал.
+  ['Grace_Osborn'] = 'Вдова', -- Полковник.
+  ['Emma_Cooper'] = 'Мать', -- Полковник.
+  ['Wurn_Linkol'] = 'Даркхолм', -- Полковник.
+  ['Cross_Dacota'] = 'Драко', -- Подполковник.
+  ['Vlad_Werber'] = '', -- Майор.
 
--- ╨Ъ╨╛╨╝. ╤Б╨╛╤Б╤В╨░╨▓.
-  ['Alex_Frank'] = '╨Э╨╡╨╝╨╡╤Ж', --╨Ъ╤Г╤А╨░╤В╨╛╤А.
-  ['Sergey_Fibo'] = '╨Я╨░╨╜╨┤╨░', -- ╨Ъ╨╛╨╝╨░╨╜╨┤╨╕╤А.
-   -- ╨Ч╨░╨╝. ╨Ъ╨╛╨╝╨░╨╜╨┤╨╕╤А╨░.
-  ['Suetlan Zelimxanov'] = '╨б╤Г╨╡╤В╨░', -- ╨Ч╨░╨╝. ╨Ъ╨╛╨╝╨░╨╜╨┤╨╕╤А╨░.
-  ['Sky_Sillence'] = '╨в╨░╨╡╤А╨╛', -- ╨Ш╨╜╤Б╤В╤А╤Г╨║╤В╨╛╤А.
-  ['Kwenyt_Hokage'] = '╨б╨║╨╛╤А╨┐╨╕╨╛╨╜', -- ╨Ш╨╜╤Б╤В╤А╤Г╨║╤В╨╛╤А.
-  ['Blayzex_Stoun'] = '╨Ф╨╢╨░╨╝╨▒╨╛', -- ╨Ш╨╜╤Б╤В╤А╤Г╨║╤В╨╛╤А.
+-- Ком. состав.
+  ['Alex_Frank'] = 'Немец', --Куратор.
+  ['Sergey_Fibo'] = 'Панда', -- Командир.
+   -- Зам. Командира.
+  ['Suetlan Zelimxanov'] = 'Суета', -- Зам. Командира.
+  ['Sky_Sillence'] = 'Таеро', -- Инструктор.
+  ['Kwenyt_Hokage'] = 'Скорпион', -- Инструктор.
+  ['Blayzex_Stoun'] = 'Джамбо', -- Инструктор.
   
--- ╨С╨╛╨╣╤Ж╤Л.
-  ['Foxit_Makayonok'] = '╨Ы╨╕╤Б',
-  ['Hawii_Tearz'] = '╨и╨░╤Е╨░',
-  ['Aiden_Florestino'] = '╨Я╤А╨╕╨╖╤А╨░╨║',
-  ['Anthony_Diez'] = '╨Ь╨╡╨┤╨▓╨╡╨┤╤М',
-  ['Ashton_Beasley'] = '╨Р╤И╨╛╤В',
-  ['Dini_Raksize'] = '╨Ф╨╕╨╜╨╛',
-  ['Comtonia_Oceguera'] = '╨Ъ╨╛╨╝╨┐╨╛╤В',
-  ['Makar_Ryabov'] = '╨з╨╡╤Е',
-  ['Sibewest_Silence'] = '╨б╨░╨╗╨╛',
-  ['Suleyman_Zelimxanov'] = '╨б╨║╨░╨╜╨┤╨░╨╗',
-  ['Azim_Kenes'] = '╨д╨░╨╜╤В╨╛╨╝',
-  ['Till_Cunningham'] = '╨Ь╤Г╤А',
-  ['Chris_Ludvig'] = '╨п╨╜╨║╨╕',
-  ['Jason_Storm'] = '╨и╤В╨╛╤А╨╝',
+-- Бойцы.
+  ['Foxit_Makayonok'] = 'Лис',
+  ['Hawii_Tearz'] = 'Шаха',
+  ['Aiden_Florestino'] = 'Призрак',
+  ['Anthony_Diez'] = 'Медведь',
+  ['Ashton_Beasley'] = 'Ашот',
+  ['Dini_Raksize'] = 'Дино',
+  ['Comtonia_Oceguera'] = 'Компот',
+  ['Makar_Ryabov'] = 'Чех',
+  ['Sibewest_Silence'] = 'Сало',
+  ['Suleyman_Zelimxanov'] = 'Скандал',
+  ['Azim_Kenes'] = 'Фантом',
+  ['Till_Cunningham'] = 'Мур',
+  ['Chris_Ludvig'] = 'Янки',
+  ['Jason_Storm'] = 'Шторм',
   
--- ╨б╤В╨░╨╢╨╡╤А╤Л.
-  ['Calvin_Espinozzi'] = '╨Э╨╛╨╖╨╖╨╕',
-  ['Henry_Markano'] = '╨е╨░╨╜╨║',
-  ['Sofiya_Murphy'] = '╨б╨╝╤Г╤А╤Д',
-  ['Candy_Dope'] = '╨н╨║╤Б╤В╨░╨╖╨╕',
-  ['Gabriel_Olimpov'] = '╨С╨╗╤Г',
-  ['Near_Alpinstar'] = '╨Я╨╡╤А╤Б╨╕╨║',
-  ['Shane_Prix'] = '╨Ю╤А╨╗╨╕╨║',
-  ['Aleks_Bichovski'] = '╨и╨░╤В╨░╨╣',
-  ['Salazar_Black'] = '╨д╨╡╨╜╤А╨╕╤А',
-  ['Jo_Bax'] = '╨С╨░╨║╤Б'
+-- Стажеры.
+  ['Calvin_Espinozzi'] = 'Ноззи',
+  ['Henry_Markano'] = 'Ханк',
+  ['Sofiya_Murphy'] = 'Смурф',
+  ['Candy_Dope'] = 'Экстази',
+  ['Gabriel_Olimpov'] = 'Блу',
+  ['Near_Alpinstar'] = 'Персик',
+  ['Shane_Prix'] = 'Орлик',
+  ['Aleks_Bichovski'] = 'Шатай',
+  ['Salazar_Black'] = 'Фенрир',
+  ['Jo_Bax'] = 'Бакс'
 }
 
 function main()
   
-  -- ╨Я╤А╨╛╨▓╨╡╤А╤П╨╡╨╝ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜ ╨╗╨╕ sampfuncs ╨╕ SAMP ╨╡╤Б╨╗╨╕ ╨╜╨╡ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜╤Л - ╨▓╨╛╨╖╨▓╤А╨░╤Й╨░╨╡╨╝╤Б╤П ╨║ ╨╜╨░╤З╨░╨╗╤Г
+  -- Проверяем загружен ли sampfuncs и SAMP если не загружены - возвращаемся к началу
 	if not isSampfuncsLoaded() or not isSampLoaded() then return end
-  -- ╨Я╤А╨╛╨▓╨╡╤А╤П╨╡╨╝ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜ ╨╗╨╕ SA-MP
+  -- Проверяем загружен ли SA-MP
 	while not isSampAvailable() do wait(100) end
-  -- ╨б╨╛╨╛╨▒╤Й╨░╨╡╨╝ ╨╛╨▒ ╨╖╨░╨│╤А╤Г╨╖╨║╨╡ ╤Б╨║╤А╨╕╨┐╤В╨░
-  stext('╨б╨║╤А╨╕╨┐╤В ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜!')
+  -- Сообщаем об загрузке скрипта
+  stext('Скрипт успешно загружен!')
   
-  -- ╨а╨╡╨│╨╕╤Б╤В╤А╨╕╤А╤Г╨╡╨╝ ╨║╨╛╨╝╨░╨╜╨┤╤Г
+  -- Регистрируем команду
   sampRegisterChatCommand('dok', cmd_dok)
-  -- ╨Я╤А╨╛╨▓╨╡╤А╤П╨╡╨╝ ╨╖╨░╤И╤С╨╗ ╨╗╨╕ ╨╕╨│╤А╨╛╨║ ╨╜╨░ ╤Б╨╡╤А╨▓╨╡╤А
+  -- Проверяем зашёл ли игрок на сервер
 	while not sampIsLocalPlayerSpawned() do wait(0) end
-	-- ╨Я╤А╨╛╨▓╨╡╤А╨║╨░ ╨╜╨░ ╨░╨▓╤В╨╛╨╖╨░╨│╤А╤Г╨╖╨║╤Г.
+	-- Проверка на автозагрузку.
   updateScript()
-  -- ╨С╨╡╤Б╨║╨╛╨╜╨╡╤З╨╜╤Л╨╣ ╤Ж╨╕╨║╨╗ ╨┤╨╗╤П ╨┐╨╛╤Б╤В╨╛╤П╨╜╨╜╨╛╨╣ ╤А╨░╨▒╨╛╤В╤Л ╤Б╨║╤А╨╕╨┐╤В╨░
+  -- Бесконечный цикл для постоянной работы скрипта
   while true do
     wait(0)
   end
@@ -112,26 +112,26 @@ function cmd_dok(args)
         sampProcessChatInput(string.format('/r 10-%s, solo.', args))
       end
     else
-      atext('{808080}╨Ш╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П | {FFFFFF}╨Т╨▓╨╡╨┤╨╕╤В╨╡: /dok ╤В╨╡╨╜-╨║╨╛╨┤.')
+      atext('{808080}Информация | {FFFFFF}Введите: /dok тен-код.')
       return
     end
   else
-    atext('{808080}╨Ю╤И╨╕╨▒╨║╨░ | {FFFFFF}╨Т╤Л ╨╜╨╡ ╤Б╨╕╨┤╨╕╤В╨╡ ╨▓ ╤В╤А╨░╨╜╤Б╨┐╨╛╤А╤В╨╡.')
+    atext('{808080}Ошибка | {FFFFFF}Вы не сидите в транспорте.')
     return
   end
 end
 
--- ┬лAuto-Report┬╗ text
+-- ?Auto-Report? text
 function stext(text)
   sampAddChatMessage((' %s {FFFFFF}%s'):format(script.this.name, text), 0xABAFDE)
 end
 
--- ┬╗ text
+-- ? text
 function atext(text)
-	sampAddChatMessage((' ┬╗ {FFFFFF}%s'):format(text), 0xABAFDE)
+	sampAddChatMessage((' ? {FFFFFF}%s'):format(text), 0xABAFDE)
 end
 
--- ╨Р╨▓╤В╨╛-╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡
+-- Авто-обновление
 function updateScript()
 	local filepath = os.getenv('TEMP') .. '\\online-update.json'
 	downloadUrlToFile('https://raw.githubusercontent.com/DianO4ka228/123/main/online-update.json', filepath, function(id, status, p1, p2)
@@ -143,17 +143,17 @@ function updateScript()
 				if info and info.latest then
 					if tonumber(thisScript().version) < tonumber(info.latest) then
 						lua_thread.create(function()
-							print('╨Э╨░╤З╨░╨╗╨╛╤Б╤М ╤Б╨║╨░╤З╨╕╨▓╨░╨╜╨╕╨╡ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П. ╨б╨║╤А╨╕╨┐╤В ╨┐╨╡╤А╨╡╨╖╨░╨│╤А╤Г╨╖╨╕╤В╤Б╤П ╤З╨╡╤А╨╡╨╖ ╨┐╨░╤А╤Г ╤Б╨╡╨║╤Г╨╜╨┤.')
+							print('Началось скачивание обновления. Скрипт перезагрузится через пару секунд.')
 							wait(300)
 							downloadUrlToFile(updatelink, thisScript().path, function(id3, status1, p13, p23)
-								if status1 == dlstatus.STATUS_ENDDOWNLOADDATA then print('╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╤Б╨║╨░╤З╨░╨╜╨╛ ╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╛.')
-								elseif status1 == 64 then print('╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╤Б╨║╨░╤З╨░╨╜╨╛ ╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╛.')
+								if status1 == dlstatus.STATUS_ENDDOWNLOADDATA then print('Обновление успешно скачано и установлено.')
+								elseif status1 == 64 then print('Обновление успешно скачано и установлено.')
 								end
 							end)
 						end)
-					else print('╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╣ ╤Б╨║╤А╨╕╨┐╤В╨░ ╨╜╨╡ ╨╛╨▒╨╜╨░╤А╤Г╨╢╨╡╨╜╨╛.') end
+					else print('Обновлений скрипта не обнаружено.') end
 				end
-			else print('╨Я╤А╨╛╨▓╨╡╤А╨║╨░ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П ╨┐╤А╨╛╤И╨╗╨░ ╨╜╨╡╤Г╤Б╨┐╨╡╤И╨╜╨╛. ╨Ч╨░╨┐╤Г╤Б╨║╨░╤О ╤Б╤В╨░╤А╤Г╤О ╨▓╨╡╤А╤Б╨╕╤О.') end
-		elseif status == 64 then print('╨Я╤А╨╛╨▓╨╡╤А╨║╨░ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П ╨┐╤А╨╛╤И╨╗╨░ ╨╜╨╡╤Г╤Б╨┐╨╡╤И╨╜╨╛. ╨Ч╨░╨┐╤Г╤Б╨║╨░╤О ╤Б╤В╨░╤А╤Г╤О ╨▓╨╡╤А╤Б╨╕╤О.') end
+			else print('Проверка обновления прошла неуспешно. Запускаю старую версию.') end
+		elseif status == 64 then print('Проверка обновления прошла неуспешно. Запускаю старую версию.') end
 	end)
 end
