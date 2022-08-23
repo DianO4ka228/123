@@ -1,7 +1,7 @@
 --Update: ������� ��������/������
 -- ���������� � �������
 script_name('�Auto-Doklad�') 		                    -- ��������� ��� �������
-script_version(3.21) 						            -- ��������� ������ ������� / FINAL
+script_version(3.22) 						            -- ��������� ������ ������� / FINAL
 script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- ��������� ��� ������
 
 -- ����������
