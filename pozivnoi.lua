@@ -1,79 +1,79 @@
---Update: Обновил позывные/состав
--- Информация о скрипте
-script_name('«Auto-Doklad»') 		                    -- Указываем имя скрипта
-script_version(3.21) 						            -- Указываем версию скрипта / FINAL
-script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	-- Указываем имя автора
+--Update:  /
+--   
+script_name('Auto-Doklad') 		                    --   
+script_version(3.21) 						            --    / FINAL
+script_author('Henrich_Rogge', 'Marshall_Milford', 'Andy_Fawkess') 	--   
 
--- Библиотеки
+-- 
 require 'lib.moonloader'
 require 'lib.sampfuncs'
 local dlstatus = require('moonloader').download_status
 
 
--- Позывные
+-- 
 local nicks = { -- [''] = '',
 -- 12+
-  ['Yupi_Mean'] = 'Юпик', -- Генерал.
-  ['Grace_Osborn'] = 'Вдова', -- Полковник.
-  ['Emma_Cooper'] = 'Мать', -- Полковник.
-  ['Wurn_Linkol'] = 'Даркхолм', -- Полковник.
-  ['Cross_Dacota'] = 'Драко', -- Подполковник.
-  ['Vlad_Werber'] = '', -- Майор.
+  ['Yupi_Mean'] = '', -- .
+  ['Grace_Osborn'] = '', -- .
+  ['Emma_Cooper'] = '', -- .
+  ['Wurn_Linkol'] = '', -- .
+  ['Cross_Dacota'] = '', -- .
+  ['Vlad_Werber'] = '', -- .
 
--- Ком. состав.
-  ['Alex_Frank'] = 'Немец', --Куратор.
-  ['Sergey_Fibo'] = 'Панда', -- Командир.
-   -- Зам. Командира.
-  ['Suetlan Zelimxanov'] = 'Суета', -- Зам. Командира.
-  ['Sky_Sillence'] = 'Таеро', -- Инструктор.
-  ['Kwenyt_Hokage'] = 'Скорпион', -- Инструктор.
-  ['Blayzex_Stoun'] = 'Джамбо', -- Инструктор.
+-- . .
+  ['Alex_Frank'] = '', --.
+  ['Sergey_Fibo'] = '', -- .
+   -- . .
+  ['Suetlan Zelimxanov'] = '', -- . .
+  ['Sky_Sillence'] = '', -- .
+  ['Kwenyt_Hokage'] = '', -- .
+  ['Blayzex_Stoun'] = '', -- .
   
--- Бойцы.
-  ['Foxit_Makayonok'] = 'Лис',
-  ['Hawii_Tearz'] = 'Шаха',
-  ['Aiden_Florestino'] = 'Призрак',
-  ['Anthony_Diez'] = 'Медведь',
-  ['Ashton_Beasley'] = 'Ашот',
-  ['Dini_Raksize'] = 'Дино',
-  ['Comtonia_Oceguera'] = 'Компот',
-  ['Makar_Ryabov'] = 'Чех',
-  ['Sibewest_Silence'] = 'Сало',
-  ['Suleyman_Zelimxanov'] = 'Скандал',
-  ['Azim_Kenes'] = 'Фантом',
-  ['Till_Cunningham'] = 'Мур',
-  ['Chris_Ludvig'] = 'Янки',
-  ['Jason_Storm'] = 'Шторм',
+-- .
+  ['Foxit_Makayonok'] = '',
+  ['Hawii_Tearz'] = '',
+  ['Aiden_Florestino'] = '',
+  ['Anthony_Diez'] = '',
+  ['Ashton_Beasley'] = '',
+  ['Dini_Raksize'] = '',
+  ['Comtonia_Oceguera'] = '',
+  ['Makar_Ryabov'] = '',
+  ['Sibewest_Silence'] = '',
+  ['Suleyman_Zelimxanov'] = '',
+  ['Azim_Kenes'] = '',
+  ['Till_Cunningham'] = '',
+  ['Chris_Ludvig'] = '',
+  ['Jason_Storm'] = '',
   
--- Стажеры.
-  ['Calvin_Espinozzi'] = 'Ноззи',
-  ['Henry_Markano'] = 'Ханк',
-  ['Sofiya_Murphy'] = 'Смурф',
-  ['Candy_Dope'] = 'Экстази',
-  ['Gabriel_Olimpov'] = 'Блу',
-  ['Near_Alpinstar'] = 'Персик',
-  ['Shane_Prix'] = 'Орлик',
-  ['Aleks_Bichovski'] = 'Шатай',
-  ['Salazar_Black'] = 'Фенрир',
-  ['Jo_Bax'] = 'Бакс'
+-- .
+  ['Calvin_Espinozzi'] = '',
+  ['Henry_Markano'] = '',
+  ['Sofiya_Murphy'] = '',
+  ['Candy_Dope'] = '',
+  ['Gabriel_Olimpov'] = '',
+  ['Near_Alpinstar'] = '',
+  ['Shane_Prix'] = '',
+  ['Aleks_Bichovski'] = '',
+  ['Salazar_Black'] = '',
+  ['Jo_Bax'] = ''
 }
 
 function main()
   
-  -- Проверяем загружен ли sampfuncs и SAMP если не загружены - возвращаемся к началу
+  --    sampfuncs  SAMP    -   
 	if not isSampfuncsLoaded() or not isSampLoaded() then return end
-  -- Проверяем загружен ли SA-MP
+  --    SA-MP
 	while not isSampAvailable() do wait(100) end
-  -- Сообщаем об загрузке скрипта
-  stext('Скрипт успешно загружен!')
+  --    
+  stext('  !')
   
-  -- Регистрируем команду
+  --  
   sampRegisterChatCommand('dok', cmd_dok)
-  -- Проверяем зашёл ли игрок на сервер
+  --      
 	while not sampIsLocalPlayerSpawned() do wait(0) end
-	-- Проверка на автозагрузку.
+	--   .
   updateScript()
-  -- Бесконечный цикл для постоянной работы скрипта
+  --      
   while true do
     wait(0)
   end
@@ -112,26 +112,26 @@ function cmd_dok(args)
         sampProcessChatInput(string.format('/r 10-%s, solo.', args))
       end
     else
-      atext('{808080}Информация | {FFFFFF}Введите: /dok тен-код.')
+      atext('{808080} | {FFFFFF}: /dok -.')
       return
     end
   else
-    atext('{808080}Ошибка | {FFFFFF}Вы не сидите в транспорте.')
+    atext('{808080} | {FFFFFF}    .')
     return
   end
 end
 
--- «Auto-Report» text
+-- Auto-Report text
 function stext(text)
   sampAddChatMessage((' %s {FFFFFF}%s'):format(script.this.name, text), 0xABAFDE)
 end
 
--- » text
+--  text
 function atext(text)
-	sampAddChatMessage((' » {FFFFFF}%s'):format(text), 0xABAFDE)
+	sampAddChatMessage(('  {FFFFFF}%s'):format(text), 0xABAFDE)
 end
 
--- Авто-обновление
+-- -
 function updateScript()
 	local filepath = os.getenv('TEMP') .. '\\online-update.json'
 	downloadUrlToFile('https://raw.githubusercontent.com/DianO4ka228/123/main/online-update.json', filepath, function(id, status, p1, p2)
@@ -143,17 +143,19 @@ function updateScript()
 				if info and info.latest then
 					if tonumber(thisScript().version) < tonumber(info.latest) then
 						lua_thread.create(function()
-							print('Началось скачивание обновления. Скрипт перезагрузится через пару секунд.')
+							print('  .     .')
 							wait(300)
 							downloadUrlToFile(updatelink, thisScript().path, function(id3, status1, p13, p23)
-								if status1 == dlstatus.STATUS_ENDDOWNLOADDATA then print('Обновление успешно скачано и установлено.')
-								elseif status1 == 64 then print('Обновление успешно скачано и установлено.')
+								if status1 == dlstatus.STATUS_ENDDOWNLOADDATA then print('    .')
+								elseif status1 == 64 then print('    .')
 								end
 							end)
 						end)
-					else print('Обновлений скрипта не обнаружено.') end
+					else print('   .') end
 				end
-			else print('Проверка обновления прошла неуспешно. Запускаю старую версию.') end
+			else print('   .   .') end
+		elseif status == 64 then print('   .   .') end
+ения прошла неуспешно. Запускаю старую версию.') end
 		elseif status == 64 then print('Проверка обновления прошла неуспешно. Запускаю старую версию.') end
 	end)
 end
